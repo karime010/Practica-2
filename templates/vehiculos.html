@@ -1,54 +1,84 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-<section>
-    <h1>Vehículos Antiguos</h1>
-    <p>
-        La historia del automóvil comenzó a finales del siglo XIX, cuando los inventores experimentaban 
-        con motores de combustión interna y diseños mecánicos innovadores. Estos primeros vehículos 
-        sentaron las bases de la movilidad moderna y transformaron la manera en que las personas se 
-        transportaban. Cada modelo de esta época refleja no solo la ingeniería de su tiempo, sino también 
-        la cultura y el estilo de vida de quienes los conducían.
-    </p>
+<section class="container my-5">
 
-    <h2>1. Ford Modelo T (Ford, 1908)</h2>
-    <p>
-        Introducido por Henry Ford, el Modelo T fue uno de los primeros autos producidos en serie, lo que permitió 
-        que el automóvil fuera accesible para la clase media. Su motor de cuatro cilindros y chasis robusto lo 
-        hicieron resistente y confiable, cambiando para siempre la industria automotriz.
-    </p>
-    <img src="{{ url_for('static', filename='gran_muralla.jpg') }}" alt="Gran Muralla China">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1>Vehículos Antiguos</h1>
+            <p>
+                La historia del automóvil comenzó a finales del siglo XIX, cuando los inventores experimentaban 
+                con motores de combustión interna y diseños mecánicos innovadores. Estos primeros vehículos 
+                sentaron las bases de la movilidad moderna y transformaron la manera en que las personas se 
+                transportaban. Cada modelo de esta época refleja no solo la ingeniería de su tiempo, sino también 
+                la cultura y el estilo de vida de quienes los conducían.
+            </p>
+        </div>
+    </div>
 
-    <h2>2. Chevrolet Suburban 1935 (Chevrolet)</h2>
-    <p>
-        Este vehículo se destacó por su tamaño y versatilidad. Diseñado para transportar familias y cargas, 
-        el Suburban combinaba comodidad y durabilidad. Se convirtió en un símbolo de los automóviles grandes 
-        estadounidenses y continúa siendo un modelo emblemático hasta hoy.
-    </p>
-    <img src="{{ url_for('static', filename='gran_muralla.jpg') }}" alt="Gran Muralla China">
 
-    <h2>3. Rolls-Royce Phantom I (Rolls-Royce, 1925-1931)</h2>
-    <p>
-        Representando lujo y perfección artesanal, el Phantom I contaba con un motor de 6.2 litros y acabados 
-        detallados hechos a mano. Fue un automóvil exclusivo para la élite de la época y marcó un estándar de 
-        elegancia que aún se reconoce en los modelos modernos de Rolls-Royce.
-    </p>
-    <img src="{{ url_for('static', filename='gran_muralla.jpg') }}" alt="Gran Muralla China">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <h2>1. Ford Modelo T (Ford, 1908)</h2>
+            <p>
+                Introducido por Henry Ford, el Modelo T fue uno de los primeros autos producidos en serie, lo que permitió 
+                que el automóvil fuera accesible para la clase media. Su motor de cuatro cilindros y chasis robusto lo 
+                hicieron resistente y confiable, cambiando para siempre la industria automotriz.
+            </p>
+            <img src="{{ url_for('static', filename='OIP (1).webp') }}" alt="Imagen de Ford Modelo T "> 
+        </div>
+    </div>
 
-    <h2>4. Volkswagen Beetle 1949 (Volkswagen)</h2>
-    <p>
-        Conocido como “Escarabajo”, fue diseñado por Ferdinand Porsche para ser económico, confiable y 
-        eficiente en consumo de combustible. Su forma icónica y motor trasero hicieron del Beetle un auto 
-        legendario y uno de los más vendidos en la historia del automóvil.
-    </p>
-    <img src="{{ url_for('static', filename='gran_muralla.jpg') }}" alt="Gran Muralla China">
 
-    <h2>5. Cadillac V16 1930 (Cadillac)</h2>
-    <p>
-        Este modelo fue una obra maestra de la ingeniería y el lujo automotriz. Con un motor de 16 cilindros, 
-        ofrecía una potencia impresionante y un viaje suave y elegante. Era un automóvil diseñado para mostrar 
-        estatus y riqueza, y su exclusividad lo convirtió en un verdadero objeto de colección.
-    </p>
-    <img src="{{ url_for('static', filename='gran_muralla.jpg') }}" alt="Gran Muralla China">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <h2>2. Chevrolet Suburban 1935 (Chevrolet)</h2>
+            <p>
+                Este vehículo se destacó por su tamaño y versatilidad. Diseñado para transportar familias y cargas, 
+                el Suburban combinaba comodidad y durabilidad. Se convirtió en un símbolo de los automóviles grandes 
+                estadounidenses y continúa siendo un modelo emblemático hasta hoy.
+            </p>
+            <img src="{{ url_for('static', filename='yellow_1935_Chevrolet_carryall_Suburban_front.webp') }}" alt=" Imagen de Chevrolet Suburban 1935 (Chevrolet)" width="40%">
+        </div>
+    </div>
+
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <h2>3. Rolls-Royce Phantom I (Rolls-Royce, 1925-1931)</h2>
+            <p>
+                Representando lujo y perfección artesanal, el Phantom I contaba con un motor de 6.2 litros y acabados 
+                detallados hechos a mano. Fue un automóvil exclusivo para la élite de la época y marcó un estándar de 
+                elegancia que aún se reconoce en los modelos modernos de Rolls-Royce.
+            </p>
+            <img src="{{ url_for('static', filename='OIP (10).webp') }}" alt="Imagen de Rolls-Royce Phantom I (Rolls-Royce, 1925-1931)">
+        </div>
+    </div>
+
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <h2>4. Volkswagen Beetle 1949 (Volkswagen)</h2>
+            <p>
+                Conocido como “Escarabajo”, fue diseñado por Ferdinand Porsche para ser económico, confiable y 
+                eficiente en consumo de combustible. Su forma icónica y motor trasero hicieron del Beetle un auto 
+                legendario y uno de los más vendidos en la historia del automóvil.
+            </p>
+            <img src="{{ url_for('static', filename='OIP (11).webp') }}" alt=" Imagen de Volkswagen Beetle 1949 (Volkswagen)">
+        </div>
+    </div>
+
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <h2>5. Cadillac V16 1930 (Cadillac)</h2>
+            <p>
+                Este modelo fue una obra maestra de la ingeniería y el lujo automotriz. Con un motor de 16 cilindros, 
+                ofrecía una potencia impresionante y un viaje suave y elegante. Era un automóvil diseñado para mostrar 
+                estatus y riqueza, y su exclusividad lo convirtió en un verdadero objeto de colección.
+            </p>
+            <img src="{{ url_for('static', filename='OIP (12).webp') }}" alt="Imagen de Cadillac">
+        </div>
+    </div>
 </section>
-{% endblock %} 
+{% endblock %}

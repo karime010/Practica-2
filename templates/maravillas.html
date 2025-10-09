@@ -1,74 +1,107 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-<section>
-    <h1>Las 7 Maravillas del Mundo</h1>
-    <p>
-        Las 7 Maravillas del Mundo representan la creatividad, ingeniería y cultura de la humanidad 
-        a lo largo de la historia. Cada una de ellas refleja avances arquitectónicos únicos y simboliza 
-        la grandeza de las civilizaciones que las construyeron. A continuación, se presenta un resumen de cada maravilla.
-    </p>
+<section class="container my-5"> 
 
-    <h2>1. Gran Muralla China</h2>
-    <p>
-        Construida entre los siglos V a.C. y XVI, la Gran Muralla China es la estructura más larga hecha por el hombre. 
-        Originalmente servía como defensa contra invasiones de pueblos nómadas. Su recorrido atraviesa montañas, valles 
-        y desiertos, demostrando la ingeniería avanzada de la época.
-    </p>
-    <img src="{{ url_for('static', filename='gran_muralla.jpg') }}" alt="Gran Muralla China">
-    
-
-    <h2>2. Petra (Jordania)</h2>
-    <p>
-        Petra, también conocida como la “ciudad rosa”, fue tallada en roca por los nabateos hace más de 2,000 años. 
-        Sus fachadas monumentales y sistemas de canales de agua muestran un alto nivel de planificación urbana y arquitectónica. 
-        Fue un importante centro comercial entre Asia, África y Europa.
-    </p>
-   <img src="{{ url_for('static', filename='gran_muralla.jpg') }}" alt="Gran Muralla China">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1>Las 7 Maravillas del Mundo</h1>
+            <p>
+                Las 7 Maravillas del Mundo representan la creatividad, ingeniería y cultura de la humanidad 
+                a lo largo de la historia. Cada una de ellas refleja avances arquitectónicos únicos y simboliza 
+                la grandeza de las civilizaciones que las construyeron. A continuación, se presenta un resumen de cada maravilla.
+            </p>
+        </div>
+    </div>
 
 
-    <h2>3. Cristo Redentor (Brasil)</h2>
-    <p>
-        Inaugurado en 1931 sobre el cerro del Corcovado en Río de Janeiro, el Cristo Redentor mide 30 metros de altura y 
-        simboliza la fe y la cultura brasileña. Su construcción requirió de ingeniería avanzada y materiales importados, 
-        siendo hoy un icono mundial del arte religioso.
-    </p>
-    <img src="{{ url_for('static', filename='gran_muralla.jpg') }}" alt="Gran Muralla China">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <h2>1. Gran Muralla China</h2>
+            <p>
+                Construida entre los siglos V a.C. y XVI, la Gran Muralla China es la estructura más larga hecha por el hombre. 
+                Originalmente servía como defensa contra invasiones de pueblos nómadas. Su recorrido atraviesa montañas, valles 
+                y desiertos, demostrando la ingeniería avanzada de la época.
+            </p>
+            <img src="{{ url_for('static', filename='OIP (6).webp') }}" alt="Gran Muralla China">
+        </div>
+    </div>
 
 
-    <h2>4. Machu Picchu (Perú)</h2>
-    <p>
-        Ciudadela inca del siglo XV ubicada en los Andes peruanos. Machu Picchu destaca por su arquitectura adaptada 
-        al terreno montañoso y su sistema de terrazas para la agricultura. Es un ejemplo de la ingeniería y la espiritualidad 
-        de la civilización Inca.
-    </p>
-    <img src="{{ url_for('static', filename='gran_muralla.jpg') }}" alt="Gran Muralla China">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <h2>2. Petra (Jordania)</h2>
+            <p>
+                Petra, también conocida como la “ciudad rosa”, fue tallada en roca por los nabateos hace más de 2,000 años. 
+                Sus fachadas monumentales y sistemas de canales de agua muestran un alto nivel de planificación urbana y arquitectónica. 
+                Fue un importante centro comercial entre Asia, África y Europa.
+            </p>
+            <img src="{{ url_for('static', filename='OIP.webp') }}" alt="Imagen de Petra (Jordania)">
+        </div>
+    </div>
 
 
-    <h2>5. Chichén Itzá (México)</h2>
-    <p>
-        Antigua ciudad maya ubicada en Yucatán. Su pirámide de Kukulkán es famosa por el efecto de luz y sombra 
-        durante los equinoccios, que parece mostrar una serpiente descendiendo. Chichén Itzá refleja el conocimiento 
-        astronómico y arquitectónico de los mayas.
-    </p>
-    <img src="{{ url_for('static', filename='gran_muralla.jpg') }}" alt="Gran Muralla China">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <h2>3. Cristo Redentor (Brasil)</h2>
+            <p>
+                Inaugurado en 1931 sobre el cerro del Corcovado en Río de Janeiro, el Cristo Redentor mide 30 metros de altura y 
+                simboliza la fe y la cultura brasileña. Su construcción requirió de ingeniería avanzada y materiales importados, 
+                siendo hoy un icono mundial del arte religioso.
+            </p>
+            <img src="{{ url_for('static', filename='OIP (7).webp') }}" alt="Cristo Redentor (Brasil)">
+        </div>
+    </div>
 
 
-    <h2>6. Coliseo Romano (Italia)</h2>
-    <p>
-        Construido en el siglo I d.C., el Coliseo era un anfiteatro donde se realizaban combates de gladiadores, espectáculos 
-        y representaciones teatrales. Su diseño permite albergar a más de 50,000 espectadores y es un ejemplo de la ingeniería 
-        avanzada de la Antigua Roma.
-    </p>
-    <img src="{{ url_for('static', filename='gran_muralla.jpg') }}" alt="Gran Muralla China">
-    
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <h2>4. Machu Picchu (Perú)</h2>
+            <p>
+                Ciudadela inca del siglo XV ubicada en los Andes peruanos. Machu Picchu destaca por su arquitectura adaptada 
+                al terreno montañoso y su sistema de terrazas para la agricultura. Es un ejemplo de la ingeniería y la espiritualidad 
+                de la civilización Inca.
+            </p>
+            <img src="{{ url_for('static', filename='descarga (2).webp') }}" alt="Imagen Machu Picchu (Perú)">
+        </div>
+    </div>
 
-    <h2>7. Taj Mahal (India)</h2>
-    <p>
-        Mausoleo construido entre 1631 y 1653 por el emperador Shah Jahan en memoria de su esposa Mumtaz Mahal. 
-        Su mármol blanco, simetría y jardines reflejan la perfección arquitectónica mogol y simbolizan amor y devoción eternos.
-    </p>
-<img src="{{ url_for('static', filename='gran_muralla.jpg') }}" alt="Gran Muralla China">
 
-</section>
-{% endblock %} 
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <h2>5. Chichén Itzá (México)</h2>
+            <p>
+                Antigua ciudad maya ubicada en Yucatán. Su pirámide de Kukulkán es famosa por el efecto de luz y sombra 
+                durante los equinoccios, que parece mostrar una serpiente descendiendo. Chichén Itzá refleja el conocimiento 
+                astronómico y arquitectónico de los mayas.
+            </p>
+            <img src="{{ url_for('static', filename='descarga (3).webp ') }}" alt="Imagen de Chichén Itzá(Mexico)">
+        </div>
+    </div>
+
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <h2>6. Coliseo Romano (Italia)</h2>
+            <p>
+                Construido en el siglo I d.C., el Coliseo era un anfiteatro donde se realizaban combates de gladiadores, espectáculos 
+                y representaciones teatrales. Su diseño permite albergar a más de 50,000 espectadores y es un ejemplo de la ingeniería 
+                avanzada de la Antigua Roma.
+            </p>
+            <img src="{{ url_for('static', filename='OIP (8).webp') }}" alt="Imagen de Coliseo Romano (Italia)">
+        </div>
+    </div>
+
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <h2>7. Taj Mahal (India)</h2>
+            <p>
+                Mausoleo construido entre 1631 y 1653 por el emperador Shah Jahan en memoria de su esposa Mumtaz Mahal. 
+                Su mármol blanco, simetría y jardines reflejan la perfección arquitectónica mogol y simbolizan amor y devoción eternos.
+            </p>
+            <img src="{{ url_for('static', filename='OIP (9).webp') }}" alt="Taj Mahal (India)">
+        </div>
+    </div>
+</section> 
+{% endblock %}
