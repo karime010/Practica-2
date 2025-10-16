@@ -6,6 +6,14 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+@app.route('/registro')
+def registro():
+    return render_template("registro.html")
+
+@app.route('/iniciodesesion')
+def iniciodesesion():
+    return render_template("iniciodesesion.html") 
+
 @app.route('/inicio')
 def inicio():
     return render_template("inicio.html")
