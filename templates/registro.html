@@ -9,17 +9,17 @@
                 <section class="row">  
                     <div class="col-md-8"> 
                         <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required minlenght="3" maxlenght="100">
                     </div>
                     <div class="col-6 mb-3">
                         <label for="Apellido" class="form-label">Apellidos</label>
-                        <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+                        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido"required minlenght="3" maxlenght="100" >
                     </div>
                 </section>
-                <form></form>
+                <form>
                     <div class="container">
                         <label for="fecha" class="form-label">Fecha de nacimiento</label>
-                        <input type="date" class="form-control" id="fecha" name="fecha">
+                        <input type="date" class="form-control" id="fecha" name="fecha"> 
                     </div>
                     <div class="container">
                         <label for="genero" class="form-label">Genero</label>
@@ -31,23 +31,21 @@
                         <label for="hombre">Otro</label>
                     </div>
                     <div class="container">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Correo electronico">
+                        <label for="email" class="form-label">email</label>
+                        <input type="email" name="email" class="form-control" id="email" required placeholder="correo@" pattern="[a-z0-9._%+-]+@[a-z](2,)" value= "{{ request.form.get("email",''))}">
                     </div>
                     <div class="container">
                         <label for="Contraseña" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="contraseña" placeholder="Coloca una contraseña">
+                        <input type="password" name="clave" class="form-control" id="contraseña" placeholder="Coloca una contraseña">
                     </div>
-                <section class="row text-center">
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-success">RRegistrarte</button>
+                    <div class="container">
+                        <input type="submit" value="enviar">
                     </div>
-                
-
-
+                <section class="container text-center">
+                        <h2 style="background: #ffffffff; color:blue; text-align: center;">Ya tienes una cuenta?</h2>
+                        <a href="/iniciodesesion" type="submit" class="btn btn-success">Inicia sesion</a> 
+                    </div>
             </form>
         </section>
     </main>
-
-
 {% endblock %}   
