@@ -1,14 +1,12 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,request, redirect, url_for, flash, session
 
 app = Flask(__name__)
+app.secret_key = "tu_clave_secreta"
 
 @app.route('/')
 def index():
     return render_template("index.html")
 
-@app.route('/registro')
-def registro():
-    return render_template("registro.html")
 
 @app.route('/iniciodesesion')
 def iniciodesesion():
@@ -34,6 +32,30 @@ def maravillas():
 def acerca():
     return render_template("acerca.html")
 
+@app.route('/registro', methods=['GET', 'POST'])
+def registro():
+    if request.method == 'POST':
+        error = None
+        Nombre = request.form.get("nombre")
+        Apellido = request.form.get("apellido")
+        fecha = request.form.get("fecha")
+        email = request.form.get("email")
+        password = request.form.get("password")
+        confirmPassword = request.form.get("confirmPassword")
+        genero = request.form.get("genero")
+
+        if password != confirmPassword:
+            error = "Las contraseñas no coinciden"
+
+        if error is not None:
+            flash(error)
+            return render_template('registro.html')
+        else:
+            flash(f"Registro exitoso!: {Nombre}")
+            return render_template('iniciodesesion.html')
+
+    return render_template('registro.html')  
+
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True)  

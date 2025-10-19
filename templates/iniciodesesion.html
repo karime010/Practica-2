@@ -1,17 +1,25 @@
-{% extends "base.html" %}
+ {% extends "base.html" %}
 
 {% block contenido %}
-<h1 class="text-center">Inicia sesion</h1>
-<div class="container ">
-    <label for="email" class="form-label">Email</label>
-         <input type="email" class="form-control" id="email" placeholder="Correo electronico">
- </div>
- <div class="container">
-    <label for="Contraseña" class="form-label">Contraseña</label>
-    <input type="password" class="form-control" id="contraseña" placeholder="Coloca una contraseña">
-</div>
-<section class="row text-center">
-    <div class="col-12">
-    <button type="submit" class="btn btn-success">Registrartte</button>
- </div>
-{% endblock %}      
+<main class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="card p-4 shadow" style="max-width: 500px; width: 100%;">
+        <h1 class="text-center">Inicia sesión</h1>
+
+        <form>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Correo electrónico" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="contraseña" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="contraseña" placeholder="Coloca una contraseña" required>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-success">Inicia sesión</button>
+            </div>
+        </form>
+    </div>
+</main>
+{% endblock %}     
