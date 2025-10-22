@@ -1,4 +1,4 @@
-from flask import Flask, render_template,request, redirect, url_for, flash, session
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 
 app = Flask(__name__)
 app.secret_key = "tu_clave_secreta"
@@ -45,17 +45,17 @@ def registro():
         genero = request.form.get("genero")
 
         if password != confirmPassword:
-            error = "Las contraseñas no coinciden"
+            error = "Las contraseñas no coincidenn" 
 
         if error is not None:
             flash(error)
             return render_template('registro.html')
         else:
             flash(f"Registro exitoso!: {Nombre}")
-            return render_template('iniciodesesion.html')
-
-    return render_template('registro.html')  
+            return render_template('index.html')
+    
+    return render_template('registro.html') 
 
 
 if __name__ == "__main__":
-    app.run(debug=True)  
+    app.run(debug=True) 

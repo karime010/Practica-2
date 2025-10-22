@@ -2,7 +2,7 @@
 
 **Grado y Grupo**: 3'D
 
-**Descripcion**: Realice un trabajo sobre plantillas web de distintos temas como animales exoticos, vehiculos antiguos, las 7 maravillas del mundo y un apartado donde hablo sobre mi.
+**Descripcion**: 
 
 **Correo**:24308060610633@cetis61.edu.mx
 
