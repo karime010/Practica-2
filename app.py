@@ -2,6 +2,19 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 
 app = Flask(__name__)
 app.secret_key = "tu_clave_secreta"
+#Usuarios predefinidos (simulando base de datos)
+USUARIOS_REGISTRADOS = {
+    'admin@correo.com' : {
+        'password' : 'Admin123',
+        'nombre' : 'Administrador',
+        'fecha_nacimiento' : '1985-11-28'
+    },
+    'usuario@correo.com' : {
+        'password' : 'usuario123',
+        'nombre' : 'Karime Cruz',
+        'fecha_nacimiento' : '2009-12-17'
+    } 
+}
 
 @app.route('/')
 def index():
