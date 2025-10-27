@@ -4,7 +4,7 @@ app = Flask(__name__)
 app.secret_key = "tu_clave_secreta"
 #Usuarios predefinidos (simulando base de datos)
 USUARIOS_REGISTRADOS = {
-    'admin@correo.com' : {
+    'admin@gmail.com' : {
         'password' : 'Admin123',
         'nombre' : 'Administrador',
         'fecha_nacimiento' : '1985-11-28'
@@ -15,6 +15,8 @@ USUARIOS_REGISTRADOS = {
         'fecha_nacimiento' : '2009-12-17'
     } 
 }
+
+app.config['SECRET_KEY'] = 'Mimecita123'
 
 @app.route('/')
 def index():
@@ -42,6 +44,39 @@ def maravillas():
 def acerca():
     return render_template("acerca.html")
 
+@app.route('/iniciodesesion')
+def login():
+    if session.get('iniciodesesion') == True:
+        session.clear()
+        return render_template("index.html")
+    return render_template("iniciodesesion.html")
+
+@app.route('/validainiciodesesion', methods=['GET','POST'])
+def iniciodesesion():
+    if request.method == 'POST':
+        email = request.form.get('email', '').strip()
+        password = request.form.get('password', '')
+    
+    #VALIDAR CREDENCIALES
+    if not email or not password:
+        flash('por favor ingresa email y contraseña','error')
+    elif email in USUARIOS_REGISTRADOS:
+        usuario = USUARIOS_REGISTRADOS[email]
+        if usuario['password'] == password:
+            #CREDENCIALES CORRECTAS
+            session
+
+        if usuario and usuario['password'] == password:
+            session['usuario'] = usuario['nombre']
+            flash("Inicio de sesión exitoso")
+            return redirect(url_for('index'))
+        else:
+            flash("Correo o contraseña incorrectos")
+            return render_template('index.html')
+
+    return render_template("iniciodesesion.html")
+
+
 @app.route('/registro', methods=['GET', 'POST'])
 def registro():
     if request.method == 'POST':
@@ -66,23 +101,6 @@ def registro():
     
     return render_template('registro.html') 
 
-@app.route('/iniciodesesion', methods=['GET','POST'])
-def iniciodesesion():
-    if request.method == 'POST':
-        email = request.form.get("email")
-        password = request.form.get("password")
-
-        usuario = USUARIOS_REGISTRADOS.get(email)
-
-        if usuario and usuario['password'] == password:
-            session['usuario'] = usuario['nombre']
-            flash("Inicio de sesión exitoso")
-            return redirect(url_for('index'))
-        else:
-            flash("Correo o contraseña incorrectos")
-            return render_template('index.html')
-
-    return render_template("iniciodesesion.html")
 
 
 if __name__ == "__main__":
