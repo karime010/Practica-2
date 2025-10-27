@@ -21,9 +21,6 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/iniciodesesion')
-def iniciodesesion():
-    return render_template("iniciodesesion.html") 
 
 @app.route('/inicio')
 def inicio():
@@ -68,6 +65,24 @@ def registro():
             return render_template('index.html')
     
     return render_template('registro.html') 
+
+@app.route('/iniciodesesion', methods=['GET','POST'])
+def iniciodesesion():
+    if request.method == 'POST':
+        email = request.form.get("email")
+        password = request.form.get("password")
+
+        usuario = USUARIOS_REGISTRADOS.get(email)
+
+        if usuario and usuario['password'] == password:
+            session['usuario'] = usuario['nombre']
+            flash("Inicio de sesión exitoso")
+            return redirect(url_for('index'))
+        else:
+            flash("Correo o contraseña incorrectos")
+            return render_template('index.html')
+
+    return render_template("iniciodesesion.html")
 
 
 if __name__ == "__main__":
