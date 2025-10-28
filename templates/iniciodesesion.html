@@ -6,7 +6,15 @@
     <div class="card p-4 shadow" style="max-width: 500px; width: 100%;">
         <h1 class="text-center">Inicia sesión</h1>
 
-        <form method="POST" action="/iniciodesesion">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }} mt-2">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <form method="POST" action="{{ url_for('validainiciodesesion') }}">
             <div class="mb-3">
                 <label for="email" class="form-label">email</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="Correo electrónico" required>

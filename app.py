@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 
 app = Flask(__name__)
 app.secret_key = "tu_clave_secreta"
+
 #Usuarios predefinidos (simulando base de datos)
 USUARIOS_REGISTRADOS = {
     'admin@gmail.com' : {
@@ -21,8 +22,6 @@ app.config['SECRET_KEY'] = 'Mimecita123'
 @app.route('/')
 def index():
     return render_template("index.html")
-
-
 
 @app.route('/inicio')
 def inicio():
@@ -44,35 +43,42 @@ def maravillas():
 def acerca():
     return render_template("acerca.html")
 
-@app.route('/iniciodesesion')
+# Página de inicio de sesión (solo GET)
+@app.route('/iniciodesesion', methods=['GET'])
 def login():
-    if session.get('iniciodesesion') == True:
-        session.clear()
-        return render_template("index.html")
+    if session.get('iniciodesesion'):
+        return redirect(url_for("index"))
     return render_template("iniciodesesion.html")
 
-@app.route('/validainiciodesesion', methods=['GET','POST'])
-def iniciodesesion():
+@app.route('cerrar_sesion')
+def cerrar_sesion():
+    session.clear()
+    flash('Haz cerrado sesion', 'success')
+    return redirect(url_for('iniciodesesion'))
+
+# Ruta que valida las credenciales (POST)
+@app.route('/validainiciodesesion', methods=['POST'])
+def validainiciodesesion():
     if request.method == 'POST':
         email = request.form.get('email', '').strip()
         password = request.form.get('password', '')
-    
-    #VALIDAR CREDENCIALES
-    if not email or not password:
-        flash('por favor ingresa email y contraseña','error')
-    elif email in USUARIOS_REGISTRADOS:
-        usuario = USUARIOS_REGISTRADOS[email]
-        if usuario['password'] == password:
-            #CREDENCIALES CORRECTAS
-            session
 
-        if usuario and usuario['password'] == password:
-            session['usuario'] = usuario['nombre']
-            flash("Inicio de sesión exitoso")
-            return redirect(url_for('index'))
+        # VALIDAR CREDENCIALES
+        if not email or not password:
+            flash('Por favor ingresa email y contraseña','error')
+        elif email in USUARIOS_REGISTRADOS:
+            usuario = USUARIOS_REGISTRADOS[email]
+            if usuario['password'] == password:
+                # CREDENCIALES CORRECTAS
+                session['usuario_email'] = email
+                session['usuario'] = usuario['nombre']
+                session['iniciodesesion'] = True
+                return redirect(url_for('index'))
+            else:
+                flash('Contraseña incorrecta','error')
         else:
-            flash("Correo o contraseña incorrectos")
-            return render_template('index.html')
+            flash('Usuario no encontrado','error')
+
 
     return render_template("iniciodesesion.html")
 
@@ -90,7 +96,7 @@ def registro():
         genero = request.form.get("genero")
 
         if password != confirmPassword:
-            error = "Las contraseñas no coincidenn" 
+            error = "Las contraseñas no coinciden" 
 
         if error is not None:
             flash(error)
@@ -101,7 +107,5 @@ def registro():
     
     return render_template('registro.html') 
 
-
-
 if __name__ == "__main__":
-    app.run(debug=True) 
+    app.run(debug=True)
