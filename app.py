@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 app = Flask(__name__)
 app.secret_key = "tu_clave_secreta"
 
-#Usuarios predefinidos (simulando base de datos)
+#USUARIOS DEFINIDOS (simulando base de datos)
 USUARIOS_REGISTRADOS = {
     'admin@gmail.com' : {
         'password' : 'Admin123',
@@ -43,20 +43,20 @@ def maravillas():
 def acerca():
     return render_template("acerca.html")
 
-# Página de inicio de sesión (solo GET)
+
 @app.route('/iniciodesesion', methods=['GET'])
-def login():
+def iniciodesesion():
     if session.get('iniciodesesion'):
         return redirect(url_for("index"))
     return render_template("iniciodesesion.html")
 
-@app.route('cerrar_sesion')
-def cerrar_sesion():
+@app.route('/cerrarsesion')
+def cerrarsesion():
     session.clear()
     flash('Haz cerrado sesion', 'success')
     return redirect(url_for('iniciodesesion'))
 
-# Ruta que valida las credenciales (POST)
+
 @app.route('/validainiciodesesion', methods=['POST'])
 def validainiciodesesion():
     if request.method == 'POST':

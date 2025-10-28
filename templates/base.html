@@ -20,14 +20,11 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link active" href="/registro">registro</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="/iniciodesesion">
-                                                                                 {% if session.get("usuario") == None %}
-                                                                                 Iniciar sesion
-                                                                                 {% else %}
-                                                                                 Cerrar sesion
-                                                                                 {% endif %}
-                                                                                </a>
-                                                                            </li>
+                    {% if session.get("usuario") == None %}
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for ('iniciodesesion')}}">Iniciar sesion</a></li> 
+                    {% else %}
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for ('cerrarsesion')}}">Cerrar sesion</a></li>
+                    {% endif %}
                     <li class="nav-item"><a class="nav-link active" href="/">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="/animales">Animales exóticos</a></li>
                     <li class="nav-item"><a class="nav-link" href="/vehiculos">Vehículos antiguos</a></li>
